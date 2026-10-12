@@ -6,7 +6,7 @@ export default function NotFound() {
     useDocumentTitle(pageTitle('Página no encontrada'));
 
     return (
-        <div className="pt-32 pb-24 px-6 max-w-3xl mx-auto min-h-screen text-center">
+        <div className="pt-36 pb-24 px-6 max-w-3xl mx-auto min-h-screen text-center">
             <p className="text-rojoMarca tracking-widest uppercase text-sm font-bold mb-4">404</p>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-negro mb-6">Esta página no existe</h1>
             <p className="text-gray-600 mb-10 leading-relaxed">

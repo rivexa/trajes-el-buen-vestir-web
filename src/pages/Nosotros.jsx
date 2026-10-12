@@ -10,7 +10,7 @@ export default function Nosotros() {
     }, []);
 
     return (
-        <div className="pt-32 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
+        <div className="pt-36 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 <div>
