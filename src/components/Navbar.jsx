@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { WHATSAPP_URL } from '../data/site';
 
@@ -21,8 +21,10 @@ export default function Navbar() {
         }
     };
 
+    const onHome = useLocation().pathname === '/';
+
     return (
-        <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 isolate">
+        <nav className={`fixed w-full z-50 isolate ${onHome ? 'border-transparent bg-white shadow-none' : 'border-b border-gray-200 bg-white/90 backdrop-blur-md'}`}>
             <div className="max-w-7xl mx-auto px-6 py-3 lg:py-4 flex justify-between items-center gap-4">
 
                 <Link
@@ -37,7 +39,7 @@ export default function Navbar() {
                     <img
                         src="/logo.png"
                         alt="Logo Trajes El Buen Vestir"
-                        className="h-16 lg:h-20 w-auto max-w-[46vw] object-contain"
+                        className="h-24 w-auto max-w-[calc(100vw-6.5rem)] object-contain object-left"
                     />
                 </Link>
 
@@ -107,7 +109,7 @@ export default function Navbar() {
             <div
                 id="menu-movil"
                 inert={!isMenuOpen}
-                className={`lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 transition-all duration-500 overflow-y-auto ${isMenuOpen ? 'max-h-[80vh] py-6' : 'max-h-0 py-0 overflow-hidden'}`}
+                className={`lg:hidden absolute top-full left-0 w-full bg-white transition-all duration-500 overflow-y-auto ${isMenuOpen ? 'max-h-[80vh] border-b border-gray-200 py-6' : 'max-h-0 overflow-hidden border-b-0 py-0'}`}
             >
                 <div className="flex flex-col items-center gap-5 text-sm uppercase tracking-widest font-semibold text-negro">
                     <Link to="/nosotros" onClick={closeMobile} className="hover:text-rojoMarca transition">Nosotros</Link>

@@ -29,13 +29,14 @@ export default function Home() {
 
     const nextSlide = () => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    const heroFade = "bg-[linear-gradient(to_top,white_0%,white_36%,rgba(255,255,255,0.92)_48%,rgba(255,255,255,0.7)_62%,rgba(255,255,255,0.4)_76%,rgba(255,255,255,0.14)_88%,transparent_100%)]";
 
     return (
         <>
             {/* Hero */}
-            <header className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-x-0 bottom-0 top-24 md:top-28 z-0 bg-white">
-                    <picture className="absolute inset-0">
+            <header className="relative min-h-[100svh] overflow-hidden">
+                <div className="absolute inset-x-0 bottom-0 top-[7.5rem] z-0 bg-white lg:top-32">
+                    <picture className="absolute inset-0 overflow-hidden">
                         <source media="(max-width: 767px)" srcSet="/hero-sm.jpg" />
                         <img
                             src="/hero.jpg"
@@ -43,23 +44,28 @@ export default function Home() {
                             width="1920"
                             height="1071"
                             fetchPriority="high"
-                            className="w-full h-full object-cover object-[80%_center] md:object-contain lg:object-right"
+                            className="absolute left-1/2 top-0 h-[88%] w-auto max-w-none -translate-x-[69%] [mask-image:linear-gradient(to_right,transparent,black_6%,black_90%,transparent)] md:h-full xl:inset-0 xl:h-full xl:w-full xl:max-w-full xl:translate-x-0 xl:object-contain xl:object-right xl:[mask-image:none]"
                         />
                     </picture>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent via-40% to-70% transition-colors duration-1000"></div>
+                    <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-white via-white/90 to-transparent via-40% to-70% xl:block"></div>
                 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col md:w-2/3 lg:w-1/2 mr-auto pt-20">
-                    <h2 className="text-5xl md:text-7xl font-serif font-bold text-negro leading-tight mb-6 drop-shadow-lg transition-colors">
-                        Distinción y <span className="text-rojoMarca italic">Elegancia.</span>
-                    </h2>
-                    <p className="text-lg md:text-xl text-gray-800 mb-10 font-medium md:font-light border-l-2 border-rojoMarca pl-4 transition-colors">
-                        Ropa formal para damas y caballeros.<br /> Confección sobre medida que proyecta tu esencia.
-                    </p>
-                    <div className="flex gap-4">
-                        <a href="#servicios" className="group bg-rojoMarca text-white px-8 py-4 uppercase tracking-widest text-sm font-bold flex items-center gap-3 hover:bg-negro transition duration-300 shadow-[0_0_15px_rgba(193,18,31,0.3)]">
-                            Descubrir <ArrowRight className="group-hover:translate-x-2 transition" size={18} />
-                        </a>
+                <div className={`pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[58%] md:hidden ${heroFade}`} aria-hidden="true"></div>
+
+                <div className="absolute inset-x-0 bottom-0 z-10 xl:relative xl:inset-auto xl:flex xl:min-h-[100svh] xl:items-center">
+                    <div className={`pointer-events-none absolute inset-x-0 -top-40 bottom-0 hidden md:block xl:hidden ${heroFade}`} aria-hidden="true"></div>
+                    <div className="relative z-10 mx-auto w-full max-w-7xl xl:px-6">
+                        <div className="px-6 pb-6 pt-8 xl:w-1/2 xl:px-0 xl:pb-0 xl:pt-20">
+                            <h2 className="mb-3 font-serif text-3xl font-bold leading-tight text-negro sm:text-4xl md:text-5xl xl:mb-6 xl:text-7xl xl:drop-shadow-lg">
+                                Distinción y <span className="text-rojoMarca italic">Elegancia.</span>
+                            </h2>
+                            <p className="mb-5 border-l-2 border-rojoMarca pl-4 pr-20 text-sm font-normal leading-snug text-gray-800 md:text-lg xl:mb-10 xl:pr-0 xl:text-xl xl:font-light">
+                                Ropa formal para damas y caballeros.<br /> Confección sobre medida que proyecta tu esencia.
+                            </p>
+                            <a href="#servicios" className="group inline-flex items-center gap-3 bg-rojoMarca px-6 py-3 text-sm font-bold uppercase tracking-widest text-white shadow-[0_0_15px_rgba(193,18,31,0.3)] transition duration-300 hover:bg-negro xl:px-8 xl:py-4">
+                                Descubrir <ArrowRight className="transition group-hover:translate-x-2" size={18} />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </header>

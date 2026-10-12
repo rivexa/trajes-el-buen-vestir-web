@@ -24,7 +24,7 @@ export default function Catalogo() {
     const consulta = `Hola, quiero información sobre ${category.title}.`;
 
     return (
-        <div className="pt-32 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
+        <div className="pt-36 pb-24 px-6 max-w-7xl mx-auto min-h-screen">
             <Link to="/" className="inline-flex items-center gap-2 text-rojoMarca hover:text-negro transition mb-8 font-semibold text-sm uppercase tracking-widest">
                 <ArrowLeft size={16} /> Volver al Inicio
             </Link>
