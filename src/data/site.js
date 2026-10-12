@@ -12,6 +12,6 @@ export const INSTAGRAM_URL = 'https://instagram.com/trajeselbuenvestir';
 export const MAPS_URL = 'https://maps.app.goo.gl/Am7okmaG1hMyj6xJ8';
 
 export const DEVELOPER = {
-    name: 'AtlaSarm',
+    name: 'RIVEXA',
     whatsapp: 'https://wa.me/593961284734',
 };

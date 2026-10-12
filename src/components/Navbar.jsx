@@ -46,6 +46,13 @@ export default function Navbar() {
                 <div className="flex items-center gap-4 lg:gap-6 z-50 shrink-0">
                     <div className="hidden lg:flex gap-6 xl:gap-8 text-xs xl:text-sm uppercase tracking-widest font-semibold text-grisMarca items-center">
 
+                        <Link
+                            to="/"
+                            className="hover:text-rojoMarca transition"
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        >
+                            Inicio
+                        </Link>
                         <Link to="/nosotros" className="hover:text-rojoMarca transition">Nosotros</Link>
 
                             <div
@@ -112,6 +119,16 @@ export default function Navbar() {
                 className={`lg:hidden absolute top-full left-0 w-full bg-white transition-all duration-500 overflow-y-auto ${isMenuOpen ? 'max-h-[80vh] border-b border-gray-200 py-6' : 'max-h-0 overflow-hidden border-b-0 py-0'}`}
             >
                 <div className="flex flex-col items-center gap-5 text-sm uppercase tracking-widest font-semibold text-negro">
+                    <Link
+                        to="/"
+                        onClick={() => {
+                            closeMobile();
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="hover:text-rojoMarca transition"
+                    >
+                        Inicio
+                    </Link>
                     <Link to="/nosotros" onClick={closeMobile} className="hover:text-rojoMarca transition">Nosotros</Link>
 
                     <div className="flex flex-col items-center w-full bg-gray-50 py-3 my-1 border-y border-gray-100">
